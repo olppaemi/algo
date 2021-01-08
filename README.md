@@ -1,4 +1,4 @@
-# 알고리즘
+# 알고리즘 문제 풀이
 
 - [정렬](https://github.com/olppaemi/algo/tree/main/Sorting)
 - [탐색](https://github.com/olppaemi/algo/tree/main/Search)
