@@ -7,6 +7,6 @@
 - 분할정복
 - [그리디](https://github.com/olppaemi/algo/tree/main/Greedy)
 - [동적계획법](https://github.com/olppaemi/algo/tree/main/Dynamic_Programming)
-- SQL문
-- 구현
+- [SQL문](https://github.com/olppaemi/algo/tree/main/SQL)
+- [구현](https://github.com/olppaemi/algo/tree/main/Simulation)
 - [수학](https://github.com/olppaemi/algo/tree/main/Math)
