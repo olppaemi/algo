@@ -1,13 +1,3 @@
-### 순차 탐색
-
-```python
-def sequential_search(array, target):
-  n = len(array)
-  for i in range(n):
-    if array[i] == target:
-      return i
-```
-
 ### 이진 탐색 (1)
 
 ```python
