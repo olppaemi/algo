@@ -1,9 +1,6 @@
 # https://onlinejudge.org/external/119/11935.pdf
 
-import sys
 import re
-sys.stdin = open("input.txt", "r")
-sys.stdout = open('output.txt', 'w')
 
 
 def solution(events):
