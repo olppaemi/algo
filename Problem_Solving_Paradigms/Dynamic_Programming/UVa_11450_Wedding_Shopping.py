@@ -1,4 +1,4 @@
-# https://onlinejudge.org/index.php?option=onlinejudge&page=show_problem&problem=2445
+# https://onlinejudge.org/external/114/11450.pdf
 
 def solution():
     M, C = 0, 0
