@@ -1,42 +1,41 @@
-import sys
-sys.stdin = open('input.txt', 'r')
-sys.stdout = open('output.txt', 'w')
-
+# http://uva.onlinejudge.org/external/103/10382.pdf
 
 def solution(n, l, w, circle):
+    LEFT, RIGHT = 0, 1
     interval = []
-    start, end = l, 0
     for pos, radius in circle:
-        dx = (radius ** 2 - (w / 2) ** 2) ** 0.5
-        left = max(0, pos - dx)
-        right = min(pos + dx, l)
-        interval.append((left, right))
+        if radius > w / 2:
+            dx = (radius ** 2 - (w / 2) ** 2) ** 0.5
+            left = pos - dx
+            right = pos + dx
+            interval.append((left, right))
 
-        start = min(start, left)
-        end = max(end, right)
-
-    if start != 0 or end != l:
-        return -1
-
-    interval.sort(key=lambda x: (x[0], -x[1]))
+    n = len(interval)
+    interval.sort(key=lambda x: x[0])
 
     answer = 0
-    i, end = 0, 0
-    while i < n and end < l:
-        if interval[i][0] <= end:
-            answer += 1
+    i, covered, next_covered = 0, 0, 0
 
-            for j in range(i + 1, n):
-                if interval[j][0] <= end and interval[j][1] > interval[i][1]:
-                    i = j
-                elif interval[j][0] > end:
-                    break
-            end = interval[i][1]
-        else:
-            answer = -1
+    while i < n:
+        pos = -1
+        while i < n and interval[i][LEFT] <= covered:
+            if interval[i][RIGHT] > next_covered:
+                next_covered = interval[i][RIGHT]
+                pos = i
+            i += 1
+        if pos < 0:
             break
 
-    return answer
+        answer += 1
+        covered = next_covered
+        if covered >= l:
+            break
+        i = pos + 1
+
+    if covered < l:
+        return -1
+    else:
+        return answer
 
 
 while True:

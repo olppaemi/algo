@@ -9,6 +9,9 @@ def solution(gems):
     candidates = []
     subset = defaultdict(int)
 
+    mn = gems_len + 1
+    answer = [0, 0]
+
     while left < gems_len:
         if len(subset) < gems_kind and right < gems_len:
             subset[gems[right]] += 1
@@ -20,14 +23,10 @@ def solution(gems):
             left += 1
 
         if len(subset) == gems_kind:
-            candidates.append((left + 1, right))
+            if right - left < mn:
+                mn = right - left
+                answer = [left + 1, right]
 
-    mn = gems_len + 1
-    answer = [0, 0]
-    for s, e in candidates:
-        if e - s + 1 < mn:
-            answer = [s, e]
-            mn = e - s + 1
     return answer
 
 
