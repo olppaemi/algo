@@ -6,7 +6,6 @@ from collections import defaultdict
 def solution(gems):
     gems_len, gems_kind = len(gems), len(set(gems))
     left, right = 0, 0
-    candidates = []
     subset = defaultdict(int)
 
     mn = gems_len + 1
