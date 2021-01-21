@@ -2,8 +2,6 @@
 
 def solution(n, t, m, p):
     answer = ''
-    values = []
-    p -= 1
 
     def convert(num):
         DIGITS = list('0123456789ABCDEF')
@@ -29,7 +27,7 @@ def solution(n, t, m, p):
     for i, num in enumerate(next_value()):
         if len(answer) == t:
             break
-        if i % m == p:
+        if i % m == p - 1:
             answer += num
 
     return answer

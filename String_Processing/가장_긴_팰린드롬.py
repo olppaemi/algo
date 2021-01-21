@@ -3,10 +3,7 @@
 def solution(s):
     for length in range(len(s), 0, -1):
         for start in range(len(s) - length + 1):
-            for i in range(length // 2 + 1):
-                if s[start + i] != s[start + length - i - 1]:
-                    break
-            else:
+            if s[start:start+length] == s[start:start+length][::-1]:
                 return length
 
 
