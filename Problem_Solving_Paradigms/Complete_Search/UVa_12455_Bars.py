@@ -12,9 +12,18 @@ def solution(n, bars):
     return "NO"
 
 
+def solution2(n, bars):
+    from itertools import combinations
+    for i in range(len(bars) + 1):
+        for c in combinations(bars, i):
+            if sum(c) == n:
+                return "YES"
+    return "NO"
+
+
 test_case = int(input())
 for count in range(test_case):
     n = int(input())
     p = int(input())
     bars = list(map(int, input().split()))
-    print(solution(n, bars))
+    print(solution2(n, bars))

@@ -19,6 +19,8 @@ def solution(x, y):
             print()
             line_counter += 1
         for r in range(8):
+            if c == y and r != x:
+                continue
             if place(r, c):
                 row[c] = r
                 backtrack(c + 1)
@@ -33,6 +35,8 @@ test_case = int(input())
 for count in range(test_case):
     if count:
         print()
-    input()
-    x, y = map(int, input().split())
+    l = ''
+    while not l:
+        l = input()
+    x, y = map(int, l.split())
     solution(x - 1, y - 1)
