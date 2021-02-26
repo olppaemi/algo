@@ -31,4 +31,4 @@ while True:
     constraints = []
     for i in range(n):
         constraints.append(list(map(int, input().split())))
-    print(solution2(m, constraints))
+    print(solution(m, constraints))
