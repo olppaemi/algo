@@ -50,7 +50,7 @@ int main()
                     next_covered = v[i].right;
                     pos = i;
                 }
-                i += 1;
+                ++i;
             }
             if (pos < 0)
                 break;

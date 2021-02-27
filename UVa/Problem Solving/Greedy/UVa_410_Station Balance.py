@@ -19,11 +19,13 @@ def solution(c, s, masses):
     print(f"IMBALANCE = {imbalance:.5f}\n")
 
 
+count = 1
 while True:
     try:
         c, s = map(int, input().split())
         masses = list(map(int, input().split()))
         print(f"Set #{count + 1}")
         solution(c, s, masses)
+        count += 1
     except EOFError:
         break
