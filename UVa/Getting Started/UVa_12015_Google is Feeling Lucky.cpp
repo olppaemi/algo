@@ -4,33 +4,28 @@
 using namespace std;
 #define REP(i, n) for (int i = 0; i < n; i++)
 #define REPN(i, n) for (int i = 1; i <= n; i++)
-#define FOR(i, a, b) for (int i = a; i < b; i++)
-#define INF 1000000000
-typedef vector<int> vi;
-typedef pair<int, int> ii;
 
 int main()
 {
-    freopen("input.txt", "r", stdin);
     int tc;
-    vector<pair<int, string>> web_page(10);
+    char url[10][101];
+    int relevance[10];
 
     scanf("%d", &tc);
     REPN(test_case, tc)
     {
-        int max = 0;
+        int mx = 0;
         REP(i, 10)
         {
-            cin >> web_page[i].second >> web_page[i].first;
-            if (web_page[i].first > max)
-                max = web_page[i].first;
+            scanf("%s %d", url[i], &relevance[i]);
+            mx = max(mx, relevance[i]);
         }
 
         printf("Case #%d:\n", test_case);
         REP(i, 10)
         {
-            if (web_page[i].first == max)
-                cout << web_page[i].second << '\n';
+            if (relevance[i] == mx)
+                printf("%s\n", url[i]);
         }
     }
 

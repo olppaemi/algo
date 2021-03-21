@@ -2,37 +2,27 @@
 
 #include <bits/stdc++.h>
 using namespace std;
-#define REP(i, n) for (int i = 0; i < n; i++)
-#define REPN(i, n) for (int i = 1; i <= n; i++)
-#define FOR(i, a, b) for (int i = a; i < b; i++)
-#define INF 1000000000
-typedef vector<int> vi;
-typedef tuple<int, int> ii;
 
-int digit_sum(int n)
+int f(int n)
 {
+    if (n < 10)
+        return n;
+
     int sum = 0;
     while (n)
     {
         sum += n % 10;
         n /= 10;
     }
-    return sum;
-}
-
-int solution(int n)
-{
-    while (n >= 10)
-        n = digit_sum(n);
-    return n;
+    return f(sum);
 }
 
 int main()
 {
     int n;
-    while (scanf("%d", &n) == 1, (n))
+    while (scanf("%d", &n), n)
     {
-        printf("%d\n", solution(n));
+        printf("%d\n", f(n));
     }
     return 0;
 }
