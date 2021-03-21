@@ -6,12 +6,7 @@ using namespace std;
 
 int solution(int n, int m)
 {
-    if (n % 3)
-        n -= (n % 3);
-    if (m % 3)
-        m -= (m % 3);
-
-    return n * m / 9;
+    return (n / 3) * (m / 3);
 }
 
 int main()
